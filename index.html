@@ -328,9 +328,19 @@
         .footer .copyright { margin-top: 1.5rem; font-size: 0.9rem; color: #888; }
         
         /* --- Scroll Animations --- */
-        .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
-        .slide-in-up { transform: translateY(50px); }
-        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in-up { transform: translateY(40px); }
+        .fade-in-left { transform: translateX(-40px); }
+        .fade-in-right { transform: translateX(40px); }
+        .zoom-in { transform: scale(0.9); }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: none;
+        }
 
         /* --- Responsive Design --- */
         @media(max-width: 992px) {
@@ -413,12 +423,12 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <p class="subtitle animate-on-scroll slide-in-up">Hello, I Am</p>
-                        <h1 class="animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">Ream <span>Proloeung</span></h1>
-                        <p class="animate-on-scroll slide-in-up" style="transition-delay: 0.4s;">A creative Video Editor, bringing stories to life through the art of post-production. I excel at producing polished, high-quality video content.</p>
-                        <a href="#contact" class="btn btn-primary animate-on-scroll slide-in-up" style="transition-delay: 0.6s;">Get In Touch</a>
+                        <p class="subtitle animate-on-scroll fade-in-up">Hello, I Am</p>
+                        <h1 class="animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">Ream <span>Proloeung</span></h1>
+                        <p class="animate-on-scroll fade-in-up" style="transition-delay: 0.4s;">A creative Video Editor, bringing stories to life through the art of post-production. I excel at producing polished, high-quality video content.</p>
+                        <a href="#contact" class="btn btn-primary animate-on-scroll fade-in-up" style="transition-delay: 0.6s;">Get In Touch</a>
                     </div>
-                    <div class="hero-image-wrapper animate-on-scroll slide-in-up" style="transition-delay: 0.3s;">
+                    <div class="hero-image-wrapper animate-on-scroll zoom-in" style="transition-delay: 0.3s;">
                         <img src="https://i.postimg.cc/fbdBTX1M/551143249-1660159438704175-13292796369-n.jpg" alt="Ream Proloeung" class="hero-image">
                         <div class="floating-icon icon-1"><img src="https://i.postimg.cc/85fKQT5z/photoshop.png" alt="Photoshop Icon"></div>
                         <div class="floating-icon icon-2"><img src="https://i.postimg.cc/QtK4Gjts/after-effects.png" alt="After Effects Icon"></div>
@@ -431,11 +441,11 @@
         <section id="about">
             <div class="container">
                 <div class="about-grid">
-                    <div class="experience-box animate-on-scroll slide-in-up">
+                    <div class="experience-box animate-on-scroll fade-in-left">
                         <div class="years">03</div>
                         <p>Years Of Experience</p>
                     </div>
-                    <div class="about-content animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <div class="about-content animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
                         <span class="section-subtitle">About Me</span>
                         <h2>My Advantage</h2>
                         <div class="skills-grid">
@@ -451,12 +461,12 @@
 
         <section id="experience">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Experience</span>
                     <h2>My Work Experience</h2>
                 </div>
                 <div class="experience-list">
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
                         <div class="exp-details">
                             <h3>Freelance Video Editor & Designer</h3>
@@ -469,7 +479,7 @@
                         </div>
                         <div class="exp-date">2022 - Present</div>
                     </div>
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-running"></i></div>
                         <div class="exp-details">
                             <h3>Freelance Photographer</h3>
@@ -481,7 +491,7 @@
                         </div>
                         <div class="exp-date">2024 - Present</div>
                     </div>
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-building"></i></div>
                         <div class="exp-details">
                             <h3>Video Editor | Motion Graphic</h3>
@@ -501,12 +511,12 @@
 
         <section id="education">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Academics</span>
                     <h2>My Education</h2>
                 </div>
                 <div class="experience-list">
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-university"></i></div>
                         <div class="exp-details">
                             <h3>Bachelor’s Degree in Computer Science</h3>
@@ -514,7 +524,7 @@
                         </div>
                         <div class="exp-date">2020 - 2025</div>
                     </div>
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-school"></i></div>
                         <div class="exp-details">
                             <h3>High School Diploma</h3>
@@ -522,7 +532,7 @@
                         </div>
                         <div class="exp-date">2014 - 2020</div>
                     </div>
-                    <div class="experience-item animate-on-scroll slide-in-up">
+                    <div class="experience-item animate-on-scroll fade-in-up">
                         <div class="exp-icon"><i class="fas fa-child"></i></div>
                         <div class="exp-details">
                             <h3>Primary School</h3>
@@ -536,12 +546,12 @@
         
         <section id="skills">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Skills</span>
                     <h2>My Capabilities</h2>
                 </div>
                 <div class="skills-software-grid">
-                    <div class="skills-column animate-on-scroll slide-in-up">
+                    <div class="skills-column animate-on-scroll fade-in-left">
                         <h3>Creative & Technical</h3>
                         <ul class="skills-list">
                             <li><i class="fas fa-check"></i> Photography & Storytelling</li>
@@ -551,7 +561,7 @@
                             <li><i class="fas fa-check"></i> Hardware/Software Troubleshooting</li>
                         </ul>
                     </div>
-                    <div class="software-column animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <div class="software-column animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
                         <h3>Software</h3>
                         <ul class="skills-list">
                             <li><i class="fas fa-check"></i> Adobe Premiere Pro</li>
@@ -567,22 +577,22 @@
 
         <section id="services">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Services</span>
                     <h2>What I Do</h2>
                 </div>
                 <div class="services-grid">
-                    <div class="service-card animate-on-scroll slide-in-up">
+                    <div class="service-card animate-on-scroll fade-in-up">
                         <div class="icon"><i class="fas fa-video"></i></div>
                         <h3>Video Editing</h3>
                         <p>Full-service editing, color grading, and audio mixing for promotional and cinematic projects.</p>
                     </div>
-                    <div class="service-card animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <div class="service-card animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">
                         <div class="icon"><i class="fas fa-rocket"></i></div>
                         <h3>Motion Graphics</h3>
                         <p>Creating custom animations and dynamic visual effects to enhance your brand's storytelling.</p>
                     </div>
-                    <div class="service-card animate-on-scroll slide-in-up" style="transition-delay: 0.4s;">
+                    <div class="service-card animate-on-scroll fade-in-up" style="transition-delay: 0.4s;">
                         <div class="icon"><i class="fas fa-camera-retro"></i></div>
                         <h3>Photography</h3>
                         <p>Capturing high-quality, professional photos of live events, sports, and lifestyle moments.</p>
@@ -593,98 +603,142 @@
 
         <section id="portfolio">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Portfolio</span>
                     <h2>Recent Work</h2>
                 </div>
-                <div class="portfolio-filters animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
-                    <button type="button" class="active" data-filter="poster">Poster</button>
-                    <button type="button" data-filter="photo">Photo</button>
+                <div class="portfolio-filters animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">
+                    <button type="button" class="active" data-filter="*">All</button>
+                    <button type="button" data-filter="poster">Poster</button>
                     <button type="button" data-filter="video">Video</button>
+                    <button type="button" data-filter="motion">Motion Graphics</button>
+                    <button type="button" data-filter="photo">Photo</button>
                 </div>
                 <div class="portfolio-grid">
                     <!-- Video Items -->
-                    <div class="portfolio-item video hide animate-on-scroll slide-in-up" data-link="https://www.facebook.com/watch/?v=525559253423027">
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=525559253423027">
                         <img src="https://i.imgur.com/zwNtDme.jpeg" alt="Video Project 1">
                         <div class="portfolio-overlay"><h3>Short Film Project</h3><p>Video</p></div>
                     </div>
-                    <div class="portfolio-item video hide animate-on-scroll slide-in-up" data-link="https://www.facebook.com/watch/?v=534412975833063">
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=534412975833063">
                         <img src="https://i.imgur.com/6Asyikc.jpeg" alt="Video Project 2">
                         <div class="portfolio-overlay"><h3>Commercial Ad</h3><p>Video</p></div>
                     </div>
-                    <div class="portfolio-item video hide animate-on-scroll slide-in-up" data-link="https://www.facebook.com/watch/?v=3558766794429001">
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=3558766794429001">
                         <img src="https://i.imgur.com/a1GFshf.png" alt="Video Project 3">
                         <div class="portfolio-overlay"><h3>Event Recap</h3><p>Video</p></div>
                     </div>
-                    <div class="portfolio-item video hide animate-on-scroll slide-in-up" data-link="https://www.facebook.com/watch/?v=996615908257430">
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=996615908257430">
                         <img src="https://i.imgur.com/sHpt8Xq.jpeg" alt="Video Project 4">
                         <div class="portfolio-overlay"><h3>Motion Graphic Reel</h3><p>Video</p></div>
                     </div>
-                    <div class="portfolio-item video hide animate-on-scroll slide-in-up" data-link="https://www.facebook.com/watch/?v=262534960119309">
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=262534960119309">
                         <img src="https://i.imgur.com/5Pb0fdW.jpeg" alt="Video Project 5">
                         <div class="portfolio-overlay"><h3>Social Media Content</h3><p>Video</p></div>
                     </div>
                     
                     <!-- Photo Items -->
-                    <div class="portfolio-item photo hide animate-on-scroll slide-in-up" data-img-src="https://placehold.co/800x600/4ac3ff/ffffff?text=Event+Photos" data-title="Cambodia Marathon 2024" data-category="Photography" data-description="Capturing the energy and emotion of the annual city marathon.">
-                        <img src="https://placehold.co/400x300/333333/FFFFFF?text=Project+Three" alt="Project 3">
-                        <div class="portfolio-overlay"><h3>Event Photography</h3><p>Photography</p></div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1227354748815431&id=100046227533673&rdid=i93JiuxeM0Wlzllf#">
+                        <img src="https://i.imgur.com/Y9F2uIq.png" alt="Photo Album 1">
+                        <div class="portfolio-overlay"><h3>Photo Album 1</h3><p>Photo</p></div>
+                    </div>
+                     <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1227354748815431&id=100046227533673&rdid=i93JiuxeM0Wlzllf#">
+                        <img src="https://i.imgur.com/nYeqKMb.png" alt="Photo Album 2">
+                        <div class="portfolio-overlay"><h3>Photo Album 2</h3><p>Photo</p></div>
+                    </div>
+                     <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1173894467494793&id=100046227533673&rdid=G9FQmRBHu03Iengo#">
+                        <img src="https://i.imgur.com/GibLcIo.png" alt="Photo Album 3">
+                        <div class="portfolio-overlay"><h3>Photo Album 3</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1183411703793901&id=100063752460446&rdid=rFPVZZj8vS5en2f0#">
+                        <img src="https://i.imgur.com/FgophTs.png" alt="Photo Album 4">
+                        <div class="portfolio-overlay"><h3>Photo Album 4</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1183411703793901&id=100063752460446&rdid=rFPVZZj8vS5en2f0#">
+                        <img src="https://i.imgur.com/pvgi6L3.png" alt="Photo Album 5">
+                        <div class="portfolio-overlay"><h3>Photo Album 5</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1237005481767856&id=100063752460446&rdid=iyrvXj5SCqKFUsfr#">
+                        <img src="https://i.imgur.com/luae9ik.png" alt="Photo Album 6">
+                        <div class="portfolio-overlay"><h3>Photo Album 6</h3><p>Photo</p></div>
+                    </div>
+
+                     <!-- Motion Graphics Items -->
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/17PSjeF9mD/">
+                        <img src="https://i.imgur.com/DdRUEej.png" alt="Motion Graphic 1">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 1</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/1EiFSS9hQF/">
+                        <img src="https://i.imgur.com/8CkBP3s.png" alt="Motion Graphic 2">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 2</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/17f7n8yt51/">
+                        <img src="https://i.imgur.com/UYP0PZi.png" alt="Motion Graphic 3">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 3</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/1EKqg9Ljmj/">
+                        <img src="https://i.imgur.com/1ssG3h6.png" alt="Motion Graphic 4">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 4</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/18yrTmn5K4/">
+                        <img src="https://i.imgur.com/D26DjkQ.jpeg" alt="Motion Graphic 5">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 5</h3><p>Motion Graphics</p></div>
                     </div>
 
                     <!-- Poster Items -->
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/EsQEhYl.jpeg" data-title="Poster Design 1" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/EsQEhYl.jpeg" data-title="Poster Design 1" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/EsQEhYl.jpeg" alt="Poster 1">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/thLbMJ8.jpeg" data-title="Poster Design 2" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/thLbMJ8.jpeg" data-title="Poster Design 2" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/thLbMJ8.jpeg" alt="Poster 2">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/68CqK66.jpeg" data-title="Poster Design 3" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/68CqK66.jpeg" data-title="Poster Design 3" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/68CqK66.jpeg" alt="Poster 3">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/XlVtkXB.jpeg" data-title="Poster Design 4" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/XlVtkXB.jpeg" data-title="Poster Design 4" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/XlVtkXB.jpeg" alt="Poster 4">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/yafFu5E.jpeg" data-title="Poster Design 5" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/yafFu5E.jpeg" data-title="Poster Design 5" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/yafFu5E.jpeg" alt="Poster 5">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/qguZMCr.jpeg" data-title="Poster Design 6" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/qguZMCr.jpeg" data-title="Poster Design 6" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/qguZMCr.jpeg" alt="Poster 6">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/KQs9ZO2.jpeg" data-title="Poster Design 7" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/KQs9ZO2.jpeg" data-title="Poster Design 7" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/KQs9ZO2.jpeg" alt="Poster 7">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/tovvRZh.jpeg" data-title="Poster Design 8" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/tovvRZh.jpeg" data-title="Poster Design 8" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/tovvRZh.jpeg" alt="Poster 8">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/DKMMjBB.jpeg" data-title="Poster Design 9" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/DKMMjBB.jpeg" data-title="Poster Design 9" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/DKMMjBB.jpeg" alt="Poster 9">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/l0QDB0X.jpeg" data-title="Poster Design 10" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/l0QDB0X.jpeg" data-title="Poster Design 10" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/l0QDB0X.jpeg" alt="Poster 10">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/d7jEMij.jpeg" data-title="Poster Design 11" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/d7jEMij.jpeg" data-title="Poster Design 11" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/d7jEMij.jpeg" alt="Poster 11">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/kmBjo2y.jpeg" data-title="Poster Design 12" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/kmBjo2y.jpeg" data-title="Poster Design 12" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/kmBjo2y.jpeg" alt="Poster 12">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/M0KWmce.jpeg" data-title="Poster Design 13" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/M0KWmce.jpeg" data-title="Poster Design 13" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/M0KWmce.jpeg" alt="Poster 13">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
-                    <div class="portfolio-item poster animate-on-scroll slide-in-up" data-img-src="https://i.imgur.com/X01w9VF.jpeg" data-title="Poster Design 14" data-category="Poster Design" data-description="A custom poster design.">
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/X01w9VF.jpeg" data-title="Poster Design 14" data-category="Poster Design" data-description="A custom poster design.">
                         <img src="https://i.imgur.com/X01w9VF.jpeg" alt="Poster 14">
                         <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
                     </div>
@@ -694,12 +748,12 @@
 
         <section id="contact">
             <div class="container">
-                <div class="section-title animate-on-scroll slide-in-up">
+                <div class="section-title animate-on-scroll fade-in-up">
                     <span class="section-subtitle">Contact</span>
                     <h2>Get In Touch</h2>
                 </div>
                 <div class="contact-grid">
-                    <div class="contact-form-wrapper animate-on-scroll slide-in-up">
+                    <div class="contact-form-wrapper animate-on-scroll fade-in-left">
                         <h3>Send us a message</h3>
                         <p>Have a question or a project in mind? Feel free to contact us.</p>
                         <form class="contact-form">
@@ -718,7 +772,7 @@
                             <button type="submit" class="btn btn-primary">Send a Message</button>
                         </form>
                     </div>
-                    <div class="contact-info-card animate-on-scroll slide-in-up" style="transition-delay: 0.2s;">
+                    <div class="contact-info-card animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
                         <h3>Hi! We are always here to help you.</h3>
                         <div class="contact-info-item">
                             <div class="info-label"><i class="fas fa-phone"></i><span>Hotline</span></div>
@@ -839,7 +893,7 @@
                 const initialFilter = () => {
                     const activeFilter = filterContainer.querySelector('.active').dataset.filter;
                     portfolioItems.forEach(item => {
-                        item.classList.toggle('hide', !item.classList.contains(activeFilter));
+                        item.classList.toggle('hide', activeFilter !== '*' && !item.classList.contains(activeFilter));
                     });
                 }
                 initialFilter();
