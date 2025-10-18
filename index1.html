@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ream Proloeung | Video Editor, Motion Graphics & Photographer</title>
+    
+    <!-- Google Fonts: Poppins --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- Global Styles & Variables (New Fiery Theme) --- */
+        :root {
+            --primary-color: #FC210D; /* Vibrant Red */
+            --primary-hover-color: #d91c0b;
+            --cta-color: #FC210D; /* Vibrant Red */
+            --background-color: #1A1A1A;
+            --surface-color: #222222;
+            --border-color: #333333;
+            --heading-color: #FFFFFF;
+            --text-color: #A9A9A9;
+            --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- CSS Reset & Base --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            overflow-x: hidden;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3, h4 { font-weight: 600; color: var(--heading-color); margin-bottom: 1rem; }
+        h1 { font-size: 3.8rem; line-height: 1.2; }
+        h2 { font-size: 2.8rem; }
+        h3 { font-size: 1.4rem; }
+        p { margin-bottom: 1.5rem; }
+        a { text-decoration: none; color: var(--primary-color); }
+
+        /* --- Layout & Helpers --- */
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 6rem 0; overflow: hidden; position: relative; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-subtitle { display: block; text-transform: uppercase; color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem; letter-spacing: 1px;}
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--primary-color); color: #fff; font-weight: 600; }
+        .btn-primary:hover { background: var(--primary-hover-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(252, 33, 13, 0.2); }
+        
+        /* --- Header & Navigation --- */
+        .navbar { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.25rem 0; background: rgba(26, 26, 26, 0.8); backdrop-filter: blur(10px); transition: all 0.3s ease; }
+        .navbar.scrolled { padding: 0.75rem 0; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .navbar .logo { font-size: 1.6rem; font-weight: 700; color: var(--heading-color); }
+        .navbar ul { display: flex; list-style: none; }
+        .navbar ul li a { padding: 0.5rem 1rem; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
+        .navbar ul li a:hover,
+        .navbar ul li a.active { color: var(--primary-color); }
+
+        /* --- Mobile Navigation --- */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .hamburger {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--heading-color);
+            position: relative;
+            transition: background 0.2s ease-out;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: var(--heading-color);
+            left: 0;
+            transition: transform 0.2s ease-out;
+        }
+
+        .hamburger::before { top: -8px; }
+        .hamburger::after { bottom: -8px; }
+
+
+        /* --- Home (Hero Section) --- */
+        #home {
+            padding-top: 80px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(-45deg, #450A3B, #FC210D, #450A3B, #FC210D);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; }
+        .hero-text { color: #fff; }
+        .hero-text .subtitle { font-size: 1.2rem; font-weight: 500; color: #fff; margin-bottom: 0.5rem; }
+        .hero-text h1 span { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); }
+        .hero-text h1 { color: #fff; }
+        .hero-text .btn-primary { background: #fff; color: #000; }
+        .hero-text .btn-primary:hover { background: #eee; }
+        .hero-image-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+        .hero-image { width: 100%; max-width: 400px; border-radius: 50%; border: 10px solid rgba(255, 255, 255, 0.2); }
+        .floating-icon { position: absolute; width: 60px; height: 60px; background: rgba(255, 255, 255, 0.9); border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.3); animation: float 6s ease-in-out infinite; }
+        .floating-icon img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+        }
+        .icon-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .icon-2 { top: 20%; right: 0%; animation-delay: 2s; }
+        .icon-3 { bottom: 15%; left: 0%; animation-delay: 4s; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        /* --- About Me Section --- */
+        .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
+        .experience-box { background: var(--surface-color); padding: 2rem; border-radius: 10px; text-align: center; }
+        .experience-box .years { font-size: 5rem; font-weight: 700; color: var(--primary-color); line-height: 1; }
+        .experience-box p { font-size: 1.2rem; color: var(--heading-color); margin: 0; }
+        .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .skill-box { background: var(--surface-color); padding: 1.5rem; border-radius: 10px; text-align: center; }
+        .skill-box .percentage { font-size: 2rem; font-weight: 600; color: var(--heading-color); }
+        .skill-box p { margin: 0; font-size: 0.9rem; }
+
+        /* --- Experience & Education Section --- */
+        #experience, #education { background-color: var(--surface-color); }
+        .experience-list .experience-item { display: grid; grid-template-columns: 60px 1fr auto; gap: 1.5rem; align-items: flex-start; padding: 2rem 0; border-bottom: 1px solid var(--border-color); }
+        .experience-list .experience-item:last-child { border-bottom: none; }
+        .exp-icon { width: 60px; height: 60px; background: #333; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.8rem; color: var(--primary-color); }
+        .exp-details h3 { margin: 0 0 0.25rem 0; font-size: 1.2rem; }
+        .exp-details p { margin-bottom: 1rem; }
+        .exp-date { font-weight: 500; color: var(--heading-color); }
+
+        .exp-description {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        .exp-description li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+        }
+        .exp-description li i {
+            color: var(--primary-color);
+            margin-top: 6px;
+            font-size: 0.8rem;
+        }
+        
+        /* --- Skills Section --- */
+        .skills-software-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .skills-column h3, .software-column h3 { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color); }
+        .skills-list { list-style: none; }
+        .skills-list li { margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem; }
+        .skills-list li i { color: var(--primary-color); }
+
+        /* --- Services Section --- */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .service-card { background: var(--surface-color); padding: 2.5rem 2rem; border-radius: 10px; text-align: left; border: 1px solid var(--border-color); transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--primary-color); }
+        .service-card .icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+        .service-card h3 { font-size: 1.3rem; }
+
+        /* --- Portfolio Section --- */
+        #portfolio { background-color: var(--surface-color); }        
+        .portfolio-filters {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .portfolio-filters button {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 0.6rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .portfolio-filters button.active {
+            background: var(--primary-color);
+            color: #fff;
+            border-color: var(--primary-color);
+        }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .portfolio-item { position: relative; overflow: hidden; border-radius: 10px; cursor: pointer; }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        .portfolio-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.5rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); opacity: 0; transition: opacity 0.4s ease; }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay h3 { color: #fff; margin: 0; }
+        .portfolio-overlay p { color: var(--primary-color); margin: 0; font-size: 0.9rem; font-weight: 500;}
+
+        .portfolio-item.hide {
+            display: none;
+        }
+
+        /* --- Lightbox --- */
+        .lightbox { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; }
+        .lightbox-content { background-color: var(--surface-color); padding: 2rem; border-radius: 5px; max-width: 800px; width: 90%; position: relative; animation: fadeIn 0.4s; }
+        .lightbox-close { position: absolute; top: 10px; right: 25px; color: #aaa; font-size: 35px; cursor: pointer; }
+        #lightbox-img { width: 100%; margin-bottom: 1rem; border-radius: 5px; }
+        #lightbox-title { margin-bottom: 0.25rem; }
+        #lightbox-category { margin-bottom: 1rem; color: var(--primary-color); font-weight: 600; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+
+        /* --- Contact Section --- */
+        #contact { background-color: var(--surface-color); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            background-color: var(--background-color);
+            padding: 3rem;
+            border-radius: 10px;
+        }
+        .contact-form-wrapper h3 { font-size: 1.8rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--heading-color);
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        .contact-info-card {
+            background-color: #2a2a2a; /* Slightly different dark shade */
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .contact-info-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info-item {
+            margin-bottom: 1.5rem;
+            background-color: var(--surface-color);
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .contact-info-item .info-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            margin-bottom: 0.25rem;
+        }
+        .contact-info-item i {
+            color: var(--primary-color);
+        }
+        .contact-info-item .info-value {
+            color: var(--text-color);
+            word-break: break-all;
+        }
+        .contact-socials h4 {
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-socials a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--text-color);
+        }
+        .contact-socials a:hover {
+            color: var(--primary-color);
+        }
+
+
+        /* --- Footer --- */
+        .footer { text-align: center; padding: 4rem 0 2rem 0; color: var(--text-color); }
+        .footer .logo { font-size: 1.8rem; font-weight: 700; color: var(--heading-color); display: block; margin-bottom: 1.5rem; }
+        .footer .social-links a { color: var(--text-color); font-size: 1.3rem; margin: 0 0.75rem; }
+        .footer .social-links a:hover { color: var(--primary-color); }
+        .footer .copyright { margin-top: 1.5rem; font-size: 0.9rem; color: #888; }
+        
+        /* --- Scroll Animations --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-in-up { transform: translateY(40px); }
+        .fade-in-left { transform: translateX(-40px); }
+        .fade-in-right { transform: translateX(40px); }
+        .zoom-in { transform: scale(0.9); }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- Responsive Design --- */
+        @media(max-width: 992px) {
+            .hero-grid, .about-grid { grid-template-columns: 1fr; }
+            .hero-text { text-align: center; }
+            #home {
+                height: auto;
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+             .hero-image-wrapper {
+                grid-row: 1;
+                margin-bottom: 2rem;
+            }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+            .contact-grid { grid-template-columns: 1fr; }
+             /* Show mobile nav toggle and style mobile menu */
+            .nav-toggle {
+                display: block;
+            }
+            .navbar .nav-links {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 70%;
+                max-width: 300px;
+                background-color: var(--surface-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                display: flex;
+            }
+            .navbar .nav-links.nav-active {
+                transform: translateX(0);
+            }
+            .navbar ul li a {
+                font-size: 1.2rem;
+            }
+        }
+        @media(max-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .skills-software-grid { grid-template-columns: 1fr; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .contact-form .form-row { grid-template-columns: 1fr; }
+            .contact-grid { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="logo">Ream</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Work</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="nav-toggle" aria-label="open navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <p class="subtitle animate-on-scroll fade-in-up">Hello, I Am</p>
+                        <h1 class="animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">Ream <span>Proloeung</span></h1>
+                        <p class="animate-on-scroll fade-in-up" style="transition-delay: 0.4s;">A creative Video Editor, bringing stories to life through the art of post-production. I excel at producing polished, high-quality video content.</p>
+                        <a href="#contact" class="btn btn-primary animate-on-scroll fade-in-up" style="transition-delay: 0.6s;">Get In Touch</a>
+                    </div>
+                    <div class="hero-image-wrapper animate-on-scroll zoom-in" style="transition-delay: 0.3s;">
+                        <img src="https://i.postimg.cc/fbdBTX1M/551143249-1660159438704175-13292796369-n.jpg" alt="Ream Proloeung" class="hero-image">
+                        <div class="floating-icon icon-1"><img src="https://i.postimg.cc/85fKQT5z/photoshop.png" alt="Photoshop Icon"></div>
+                        <div class="floating-icon icon-2"><img src="https://i.postimg.cc/QtK4Gjts/after-effects.png" alt="After Effects Icon"></div>
+                        <div class="floating-icon icon-3"><img src="https://i.postimg.cc/LXgCKmXq/premiere-pro.png" alt="Premiere Pro Icon"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="experience-box animate-on-scroll fade-in-left">
+                        <div class="years">03</div>
+                        <p>Years Of Experience</p>
+                    </div>
+                    <div class="about-content animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
+                        <span class="section-subtitle">About Me</span>
+                        <h2>My Advantage</h2>
+                        <div class="skills-grid">
+                            <div class="skill-box"><div class="percentage">95%</div><p>Video Editing</p></div>
+                            <div class="skill-box"><div class="percentage">90%</div><p>Motion Graphics</p></div>
+                            <div class="skill-box"><div class="percentage">92%</div><p>Photography</p></div>
+                            <div class="skill-box"><div class="percentage">85%</div><p>Graphic Design</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Experience</span>
+                    <h2>My Work Experience</h2>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="exp-details">
+                            <h3>Freelance Video Editor & Designer</h3>
+                            <p>Self-Employed</p>
+                            <ul class="exp-description">
+                                <li><i class="fas fa-angle-right"></i>Edited promotional videos, tutorials, and social media content from start to finish.</li>
+                                <li><i class="fas fa-angle-right"></i>Designed and animated motion graphics, lower thirds, and titles.</li>
+                                <li><i class="fas fa-angle-right"></i>Collaborated with clients to understand their vision and deliver on requirements.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-date">2022 - Present</div>
+                    </div>
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-running"></i></div>
+                        <div class="exp-details">
+                            <h3>Freelance Photographer</h3>
+                            <p>Cambodia Runner Club</p>
+                            <ul class="exp-description">
+                                <li><i class="fas fa-angle-right"></i>Captured dynamic action shots at running events and marathons.</li>
+                                <li><i class="fas fa-angle-right"></i>Edited and color-graded photos for promotional use on social media.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-date">2024 - Present</div>
+                    </div>
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-building"></i></div>
+                        <div class="exp-details">
+                            <h3>Video Editor | Motion Graphic</h3>
+                            <p>Rean Ann Company – Phnom Penh, Cambodia</p>
+                            <ul class="exp-description">
+                                <li><i class="fas fa-angle-right"></i>Edited videos for social media.</li>
+                                <li><i class="fas fa-angle-right"></i>Created motion graphics and short-form video content.</li>
+                                <li><i class="fas fa-angle-right"></i>Managed video timelines, schedules, and production quality.</li>
+                                <li><i class="fas fa-angle-right"></i>Coordinated with clients to meet project goals and expectations.</li>
+                            </ul>
+                        </div>
+                        <div class="exp-date">04/2022 – 04/2025</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Academics</span>
+                    <h2>My Education</h2>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-university"></i></div>
+                        <div class="exp-details">
+                            <h3>Bachelor’s Degree in Computer Science</h3>
+                            <p>Preah Sihamoniraja Buddhist University – Phnom Penh</p>
+                        </div>
+                        <div class="exp-date">2020 - 2025</div>
+                    </div>
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-school"></i></div>
+                        <div class="exp-details">
+                            <h3>High School Diploma</h3>
+                            <p>Hun Sen Svay Chrum High School – Svay Rieng, Cambodia</p>
+                        </div>
+                        <div class="exp-date">2014 - 2020</div>
+                    </div>
+                    <div class="experience-item animate-on-scroll fade-in-up">
+                        <div class="exp-icon"><i class="fas fa-child"></i></div>
+                        <div class="exp-details">
+                            <h3>Primary School</h3>
+                            <p>Preaktob Primary School – Svay Rieng, Cambodia</p>
+                        </div>
+                        <div class="exp-date">2008 - 2014</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Skills</span>
+                    <h2>My Capabilities</h2>
+                </div>
+                <div class="skills-software-grid">
+                    <div class="skills-column animate-on-scroll fade-in-left">
+                        <h3>Creative & Technical</h3>
+                        <ul class="skills-list">
+                            <li><i class="fas fa-check"></i> Photography & Storytelling</li>
+                            <li><i class="fas fa-check"></i> Video Editing & Post-Production</li>
+                            <li><i class="fas fa-check"></i> Graphic Design</li>
+                            <li><i class="fas fa-check"></i> IT Support</li>
+                            <li><i class="fas fa-check"></i> Hardware/Software Troubleshooting</li>
+                        </ul>
+                    </div>
+                    <div class="software-column animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
+                        <h3>Software</h3>
+                        <ul class="skills-list">
+                            <li><i class="fas fa-check"></i> Adobe Premiere Pro</li>
+                            <li><i class="fas fa-check"></i> Adobe After Effects</li>
+                            <li><i class="fas fa-check"></i> Adobe Photoshop</li>
+                            <li><i class="fas fa-check"></i> Adobe Illustrator</li>
+                            <li><i class="fas fa-check"></i> CapCut</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Services</span>
+                    <h2>What I Do</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll fade-in-up">
+                        <div class="icon"><i class="fas fa-video"></i></div>
+                        <h3>Video Editing</h3>
+                        <p>Full-service editing, color grading, and audio mixing for promotional and cinematic projects.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">
+                        <div class="icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Motion Graphics</h3>
+                        <p>Creating custom animations and dynamic visual effects to enhance your brand's storytelling.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll fade-in-up" style="transition-delay: 0.4s;">
+                        <div class="icon"><i class="fas fa-camera-retro"></i></div>
+                        <h3>Photography</h3>
+                        <p>Capturing high-quality, professional photos of live events, sports, and lifestyle moments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2>Recent Work</h2>
+                </div>
+                <div class="portfolio-filters animate-on-scroll fade-in-up" style="transition-delay: 0.2s;">
+                    <button type="button" class="active" data-filter="*">All</button>
+                    <button type="button" data-filter="poster">Poster</button>
+                    <button type="button" data-filter="video">Video</button>
+                    <button type="button" data-filter="motion">Motion Graphics</button>
+                    <button type="button" data-filter="photo">Photo</button>
+                </div>
+                <div class="portfolio-grid">
+                    <!-- Video Items -->
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=525559253423027">
+                        <img src="https://i.imgur.com/zwNtDme.jpeg" alt="Video Project 1">
+                        <div class="portfolio-overlay"><h3>Short Film Project</h3><p>Video</p></div>
+                    </div>
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=534412975833063">
+                        <img src="https://i.imgur.com/6Asyikc.jpeg" alt="Video Project 2">
+                        <div class="portfolio-overlay"><h3>Commercial Ad</h3><p>Video</p></div>
+                    </div>
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=3558766794429001">
+                        <img src="https://i.imgur.com/a1GFshf.png" alt="Video Project 3">
+                        <div class="portfolio-overlay"><h3>Event Recap</h3><p>Video</p></div>
+                    </div>
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=996615908257430">
+                        <img src="https://i.imgur.com/sHpt8Xq.jpeg" alt="Video Project 4">
+                        <div class="portfolio-overlay"><h3>Motion Graphic Reel</h3><p>Video</p></div>
+                    </div>
+                    <div class="portfolio-item video animate-on-scroll zoom-in" data-link="https://www.facebook.com/watch/?v=262534960119309">
+                        <img src="https://i.imgur.com/5Pb0fdW.jpeg" alt="Video Project 5">
+                        <div class="portfolio-overlay"><h3>Social Media Content</h3><p>Video</p></div>
+                    </div>
+                    
+                    <!-- Photo Items -->
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1227354748815431&id=100046227533673&rdid=i93JiuxeM0Wlzllf#">
+                        <img src="https://i.imgur.com/Y9F2uIq.png" alt="Photo Album 1">
+                        <div class="portfolio-overlay"><h3>Photo Album 1</h3><p>Photo</p></div>
+                    </div>
+                     <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1227354748815431&id=100046227533673&rdid=i93JiuxeM0Wlzllf#">
+                        <img src="https://i.imgur.com/nYeqKMb.png" alt="Photo Album 2">
+                        <div class="portfolio-overlay"><h3>Photo Album 2</h3><p>Photo</p></div>
+                    </div>
+                     <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1173894467494793&id=100046227533673&rdid=G9FQmRBHu03Iengo#">
+                        <img src="https://i.imgur.com/GibLcIo.png" alt="Photo Album 3">
+                        <div class="portfolio-overlay"><h3>Photo Album 3</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1183411703793901&id=100063752460446&rdid=rFPVZZj8vS5en2f0#">
+                        <img src="https://i.imgur.com/FgophTs.png" alt="Photo Album 4">
+                        <div class="portfolio-overlay"><h3>Photo Album 4</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1183411703793901&id=100063752460446&rdid=rFPVZZj8vS5en2f0#">
+                        <img src="https://i.imgur.com/pvgi6L3.png" alt="Photo Album 5">
+                        <div class="portfolio-overlay"><h3>Photo Album 5</h3><p>Photo</p></div>
+                    </div>
+                    <div class="portfolio-item photo animate-on-scroll zoom-in" data-link="https://www.facebook.com/story.php?story_fbid=1237005481767856&id=100063752460446&rdid=iyrvXj5SCqKFUsfr#">
+                        <img src="https://i.imgur.com/luae9ik.png" alt="Photo Album 6">
+                        <div class="portfolio-overlay"><h3>Photo Album 6</h3><p>Photo</p></div>
+                    </div>
+
+                     <!-- Motion Graphics Items -->
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/17PSjeF9mD/">
+                        <img src="https://i.imgur.com/DdRUEej.png" alt="Motion Graphic 1">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 1</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/1EiFSS9hQF/">
+                        <img src="https://i.imgur.com/8CkBP3s.png" alt="Motion Graphic 2">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 2</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/17f7n8yt51/">
+                        <img src="https://i.imgur.com/UYP0PZi.png" alt="Motion Graphic 3">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 3</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/1EKqg9Ljmj/">
+                        <img src="https://i.imgur.com/1ssG3h6.png" alt="Motion Graphic 4">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 4</h3><p>Motion Graphics</p></div>
+                    </div>
+                    <div class="portfolio-item motion animate-on-scroll zoom-in" data-link="https://www.facebook.com/share/v/18yrTmn5K4/">
+                        <img src="https://i.imgur.com/D26DjkQ.jpeg" alt="Motion Graphic 5">
+                        <div class="portfolio-overlay"><h3>Motion Graphic 5</h3><p>Motion Graphics</p></div>
+                    </div>
+
+                    <!-- Poster Items -->
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/EsQEhYl.jpeg" data-title="Poster Design 1" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/EsQEhYl.jpeg" alt="Poster 1">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/thLbMJ8.jpeg" data-title="Poster Design 2" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/thLbMJ8.jpeg" alt="Poster 2">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/68CqK66.jpeg" data-title="Poster Design 3" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/68CqK66.jpeg" alt="Poster 3">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/XlVtkXB.jpeg" data-title="Poster Design 4" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/XlVtkXB.jpeg" alt="Poster 4">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/yafFu5E.jpeg" data-title="Poster Design 5" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/yafFu5E.jpeg" alt="Poster 5">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/qguZMCr.jpeg" data-title="Poster Design 6" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/qguZMCr.jpeg" alt="Poster 6">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/KQs9ZO2.jpeg" data-title="Poster Design 7" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/KQs9ZO2.jpeg" alt="Poster 7">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/tovvRZh.jpeg" data-title="Poster Design 8" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/tovvRZh.jpeg" alt="Poster 8">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/DKMMjBB.jpeg" data-title="Poster Design 9" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/DKMMjBB.jpeg" alt="Poster 9">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/l0QDB0X.jpeg" data-title="Poster Design 10" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/l0QDB0X.jpeg" alt="Poster 10">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/d7jEMij.jpeg" data-title="Poster Design 11" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/d7jEMij.jpeg" alt="Poster 11">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/kmBjo2y.jpeg" data-title="Poster Design 12" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/kmBjo2y.jpeg" alt="Poster 12">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/M0KWmce.jpeg" data-title="Poster Design 13" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/M0KWmce.jpeg" alt="Poster 13">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                    <div class="portfolio-item poster animate-on-scroll zoom-in" data-img-src="https://i.imgur.com/X01w9VF.jpeg" data-title="Poster Design 14" data-category="Poster Design" data-description="A custom poster design.">
+                        <img src="https://i.imgur.com/X01w9VF.jpeg" alt="Poster 14">
+                        <div class="portfolio-overlay"><h3>Poster Design</h3><p>Poster</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="section-title animate-on-scroll fade-in-up">
+                    <span class="section-subtitle">Contact</span>
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-form-wrapper animate-on-scroll fade-in-left">
+                        <h3>Send us a message</h3>
+                        <p>Have a question or a project in mind? Feel free to contact us.</p>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send a Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info-card animate-on-scroll fade-in-right" style="transition-delay: 0.2s;">
+                        <h3>Hi! We are always here to help you.</h3>
+                        <div class="contact-info-item">
+                            <div class="info-label"><i class="fas fa-phone"></i><span>Hotline</span></div>
+                            <div class="info-value">0978403144</div>
+                        </div>
+                        <div class="contact-info-item">
+                           <div class="info-label"><i class="fab fa-whatsapp"></i><span>SMS / Whatsapp</span></div>
+                           <div class="info-value">0978403144</div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="info-label"><i class="fas fa-envelope"></i><span>Email</span></div>
+                            <div class="info-value">Proloeungream@gmail.com</div>
+                        </div>
+                        <div class="contact-socials">
+                            <h4>Connect with us</h4>
+                             <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                             <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                             <a href="#" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                             <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#home" class="logo">Ream Proloeung</a>
+            <div class="social-links">
+                <a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Ream Proloeung. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="portfolio-lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img src="" id="lightbox-img" alt="Portfolio Project">
+            <h3 id="lightbox-title"></h3><p id="lightbox-category"></p><p id="lightbox-description"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Navbar scroll effect ---
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // --- Animate elements on scroll ---
+            const scrollElements = document.querySelectorAll('.animate-on-scroll');
+            const elementObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            scrollElements.forEach(el => elementObserver.observe(el));
+            
+            // --- Active nav link on scroll ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            const linkHref = link.getAttribute('href').substring(1);
+                            link.classList.toggle('active', linkHref === entry.target.id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+            sections.forEach(section => navObserver.observe(section));
+
+            // --- Portfolio Lightbox & Linking ---
+            const portfolioItems = document.querySelectorAll('.portfolio-item');
+            const lightbox = document.getElementById('portfolio-lightbox');
+            if (lightbox) {
+                const lightboxClose = lightbox.querySelector('.lightbox-close');
+                portfolioItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const link = item.dataset.link;
+                        if (link) {
+                            window.open(link, '_blank');
+                        } else {
+                            document.getElementById('lightbox-img').src = item.dataset.imgSrc;
+                            document.getElementById('lightbox-title').textContent = item.dataset.title;
+                            document.getElementById('lightbox-category').textContent = item.dataset.category;
+                            document.getElementById('lightbox-description').textContent = item.dataset.description;
+                            lightbox.style.display = 'flex';
+                            document.body.style.overflow = 'hidden';
+                        }
+                    });
+                });
+
+                const closeLightbox = () => {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                };
+                if(lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+                lightbox.addEventListener('click', e => { if(e.target === lightbox) closeLightbox(); });
+                document.addEventListener('keydown', e => { if (e.key === "Escape") closeLightbox(); });
+            }
+
+            // --- Portfolio Filtering ---
+            const filterContainer = document.querySelector('.portfolio-filters');
+            if (filterContainer) {
+                const filterButtons = filterContainer.querySelectorAll('button');
+                const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+                const initialFilter = () => {
+                    const activeFilter = filterContainer.querySelector('.active').dataset.filter;
+                    portfolioItems.forEach(item => {
+                        item.classList.toggle('hide', activeFilter !== '*' && !item.classList.contains(activeFilter));
+                    });
+                }
+                initialFilter();
+
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        e.target.classList.add('active');
+
+                        const filter = e.target.dataset.filter;
+
+                        portfolioItems.forEach(item => {
+                            item.classList.toggle('hide', filter !== '*' && !item.classList.contains(filter));
+                        });
+                    });
+                });
+            }
+
+            // --- Mobile Navigation Toggle ---
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNavLinks = document.querySelector('.navbar .nav-links'); // Be more specific
+            const allNavLinks = document.querySelectorAll('.nav-link');
+
+            if (navToggle && mainNavLinks) {
+                navToggle.addEventListener('click', () => {
+                    mainNavLinks.classList.toggle('nav-active');
+                });
+            
+                allNavLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mainNavLinks.classList.remove('nav-active');
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
