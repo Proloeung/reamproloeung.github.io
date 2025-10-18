@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
 
+    alert('hello');
     // --- Animate elements on scroll ---
     const scrollElements = document.querySelectorAll('.animate-on-scroll');
     const elementObserver = new IntersectionObserver((entries) => {
